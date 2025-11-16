@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrito — Tiendas Urbano</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script defer src="js/anim.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/mas.js"></script>
+</head>
+<body>
+
+<header class="nav-fala">
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
+        <button class="menu-btn">☰ Menú</button>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+        <a href="carrito.html" class="cart-btn">🛒 <span class="cart-badge">0</span></a>
+    </div>
+</header>
+
+<main class="cart-container">
+
+    <!-- IZQUIERDA (PRODUCTOS) -->
+    <section class="cart-left">
+        <h2>Carro</h2>
+
+        <!-- Aquí se llenarán los productos dinamicamente -->
+        <div id="cart-wrap"></div>
+    </section>
+
+    <!-- DERECHA (RESUMEN) -->
+    <aside class="cart-summary">
+        <h3>Resumen de la compra</h3>
+
+        <div class="summary-box" id="summary-box">
+            <p>Productos (0) <span>$0</span></p>
+            <hr>
+            <p class="summary-total">Total: <span>$0</span></p>
+
+            <button class="buy-btn" onclick="goToPay()" id="pay-btn" disabled>
+                Continuar compra
+            </button>
+        </div>
+    </aside>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Tiendas Urbano</p>
+    <div class="social">
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">🎵</a>
+    </div>
+</footer>
+
+<script>
+function goToPay(){
+    location.href = "pago.html";
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    updateCartUI();
+    updateSummary();
+});
+
+function updateSummary(){
+    const cart = loadCart();
+    const total = cartTotal();
+    const box = document.getElementById("summary-box");
+
+    box.innerHTML = `
+        <p>Productos (${cartCount()}) <span>$${total.toFixed(0)}</span></p>
+        <hr>
+        <p class="summary-total">Total: <span>$${total.toFixed(0)}</span></p>
+        <button class="buy-btn" onclick="goToPay()" ${cart.length === 0 ? "disabled" : ""}>
+            Continuar compra
+        </button>
+    `;
+}
+</script>
+
+</body>
+</html>

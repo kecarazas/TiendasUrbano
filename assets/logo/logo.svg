@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60">
+  <rect rx="8" ry="8" width="240" height="60" fill="#00c29a"/>
+  <text x="20" y="38" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="22" fill="#021217">Tiendas</text>
+  <text x="118" y="38" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="22" fill="#021217">Urbano</text>
+</svg>

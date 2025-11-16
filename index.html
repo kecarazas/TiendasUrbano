@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tiendas Urbano — Home</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script defer src="js/anim.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/mod.js"></script>
+</head>
+<body>
+<header class="nav-fala">
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
+
+        <button class="menu-btn">☰ Menú</button>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <button onclick="logout()" class="btn">Cerrar sesión</button>
+        <a href="historial.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+
+        <a href="carrito.html" class="cart-btn">
+            🛒 <span class="cart-badge">1</span>
+        </a>
+    </div>
+</header>
+
+
+  <main class="container">
+    <section class="hero-slider reveal">
+      <div class="hero-slide">
+        <img src="image/banner4.webp" alt="">
+      </div>
+      <div class="hero-slide">
+        <img src="image/banner2.jpeg" alt="">
+      </div>
+      <div class="hero-slide">
+        <img src="image/banner3.webp" alt="">
+      </div>
+    </section>
+
+    <h3 style="margin-top:22px">Novedades</h3>
+    <div class="grid-products">
+      <div class="card-prod reveal">
+        <img src="image/zapatillas.jpg" alt="Zapatillas">
+        <div class="card-body">
+
+          <h4>Zapatillas Urbanas</h4>
+          <div class="price">$59.990</div>
+          <div class="desc small">Suela resistente, look urbano</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p010', 'Zapatillas Urbanas', 59990, 'image/zapatillas.jpg')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/D_NQ_NP_709189-MLC79488963049_092024-O-poleron-mujer-downstreet-14-zip-sweatshirt-negro-lippi.webp" alt="Polerón">
+        <div class="card-body">
+          <h4>Polerón Street</h4>
+          <div class="price">$26.990</div>
+          <div class="desc small">Calidez y estilo</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p020', 'Polerón Street', 26990, 'image/D_NQ_NP_709189-MLC79488963049_092024-O-poleron-mujer-downstreet-14-zip-sweatshirt-negro-lippi.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/blanco1.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Polera Mujer Basement</h4>
+          <div class="price">$29.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p030', 'Polera Mujer Basement', 29990, 'image/blanco1.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/polera classic.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Polera classic</h4>
+          <div class="price">$12.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p040', 'Polera classic', 12990, 'image/polera classic.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/negro.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Polera Mujer Basement</h4>
+          <div class="price">$29.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p050', 'Polera Mujer Basement', 29990, 'image/negro.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/azul.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Polera Mujer Basement</h4>
+          <div class="price">$29.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p060', 'Polera Mujer Basement', 29990, 'image/azul.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/zapas.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Zapatilla CURE PLATFORM</h4>
+          <div class="price">$49.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p070', 'Zapatilla CURE PLATFORM', 49990, 'image/zapas.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-prod reveal">
+        <img src="image/cartera.webp" alt="Chaqueta">
+        <div class="card-body">
+          <h4>Cartera Mujer Aldo</h4>
+          <div class="price">$30.990</div>
+          <div class="desc small">Impermeable y ligera</div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="addToCart('p080', 'Cartera Mujer Aldo', 30990, 'image/cartera.webp')">
+                Agregar
+            </button>
+            <a href="producto.html" class="link-muted" style="align-self:center">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<footer class="footer">
+    <p>© 2025 Tiendas Urbano</p>
+    <div class="social">
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">🎵</a>
+    </div>
+</footer>
+<script>
+function cerrarSesion() {
+    localStorage.removeItem("usuarioActivo");
+    location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

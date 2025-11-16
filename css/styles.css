@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+:root{
+ --main:#8A2BE2;
+ --dark:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+body{background:#eee;color:#222;transition:.4s;}
+.dark{background:#111;color:#eee;}
+
+.header{
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;position:sticky;top:0;background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);color:#fff;z-index:10;
+}
+.logo{cursor:pointer;font-size:28px;color:#fff;}
+
+.nav a{margin:0 10px;color:#fff;text-decoration:none;}
+.nav a:hover{color:var(--main)}
+
+.hero{
+height:60vh;background:url('https://i.ibb.co/C7H5PXw/citybg.jpg') center/cover;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+color:white;text-shadow:2px 2px 6px #000;
+}
+.btn-primary{
+padding:12px 25px;background:var(--main);color:white;
+border-radius:8px;margin-top:15px;
+display:inline-block;text-decoration:none;
+}
+
+.title-section{text-align:center;margin:35px 0;font-size:28px;}
+
+.productos-grid{
+width:90%;margin:auto;display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+.producto-card{
+background:white;padding:15px;border-radius:12px;
+box-shadow:0 4px 12px #0003;text-align:center;
+transition:.3s;
+}
+.producto-card:hover{transform:scale(1.06)}
+
+.producto-card img{width:100%;border-radius:10px;}
+.price{font-weight:700;margin:5px 0;}
+
+.badge{
+position:absolute;background:var(--main);color:white;
+padding:3px 8px;border-radius:6px;font-size:12px;margin:5px;
+}
+.oferta{background:red}
+.oferta-price{color:red;font-weight:bold}
+
+.footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40px;}
+.footer .social a{margin:0 8px;font-size:22px;color:white;}
+
+.centered{
+display:flex;justify-content:center;align-items:center;
+height:100vh;background:url("../image/fondo.png") center/cover;
+}
+
+.glass-card{
+width:350px;padding:25px;border-radius:15px;
+background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+color:white;text-align:center;
+}
+.glass-card input{
+width:100%;padding:12px;margin:6px 0;border:none;
+border-radius:8px;background:rgba(255,255,255,.8);
+}
+
+button{
+padding:10px 18px;border:none;border-radius:8px;
+background:var(--main);color:white;margin-top:8px;cursor:pointer;
+}
+button:hover{opacity:.8}
+
+.ir-arriba{
+position:fixed;bottom:20px;right:20px;font-size:25px;
+border:none;background:var(--main);color:white;border-radius:50%;
+width:50px;height:50px;cursor:pointer;
+}
+
+.carrito-panel{
+position:fixed;right:-300px;top:0;width:280px;height:100%;
+background:#000c;color:white;padding:20px;transition:.4s;
+}
+.carrito-panel.show{right:0}
+
+.notif{
+position:fixed;bottom:30px;left:50%;transform:translateX(-50%);
+background:var(--main);color:white;padding:12px 25px;
+border-radius:10px;opacity:0;transition:.3s;
+}
+.notif.show{opacity:1}
+
+.dark .producto-card{background:#222;color:white}

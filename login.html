@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Login - Tiendas Urbano</title>
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/main.js"></script>
+</head>
+<body class="centered">
+
+<div class="glass-card">
+<h2>Inicio de sesión</h2>
+
+<input type="text" id="loginUser" placeholder="🧑 Usuario">
+<input type="password" id="loginPass" placeholder="🔑 Contraseña">
+
+<button onclick="login()">Entrar</button>
+
+<p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+</div>
+<script>
+function loginUser() {
+    const nombre = document.getElementById("userName").value; // o el campo que uses
+    localStorage.setItem("usuarioActivo", nombre);
+    location.href = "index.html";
+}
+</script>
+</body>
+</html>

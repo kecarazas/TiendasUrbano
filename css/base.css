@@ -1,0 +1,281 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #0b1220;
+  --muted: #6b7280;
+  --accent: #00c29a;
+  --accent-2: #007c5f;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(2,6,23,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Utility */
+.container {
+  width: min(80%, 1400px);
+  margin: 0 auto;
+  padding: 40px;
+}
+.row{display:flex;gap:18px;align-items:center}
+.center{text-align:center}
+.small{font-size:13px;color:var(--muted)}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.link-muted{color:var(--muted);text-decoration:none}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  background:#111;
+  color:white;
+  margin-top:auto;
+}
+.footer .social a{margin:0 8px;font-size:22px;color:white;}
+
+.dark .producto-card{background:#222;color:white}
+
+* {
+  transition: .25s ease-in-out;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+.cart-container {
+    display: flex;
+    gap: 25px;
+    margin: 25px auto;
+    max-width: 1300px;
+}
+
+/* COLUMNA IZQUIERDA */
+.cart-left {
+    width: 70%;
+}
+
+.cart-left h2 {
+    margin-bottom: 10px;
+}
+
+/* CAJA PRINCIPAL */
+.cart-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 6px #0001;
+    border: 1px solid #eee;
+}
+
+.cart-seller {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.seller-name {
+    color: #70c000;
+    font-weight: bold;
+}
+
+.cart-selectall {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+/* ITEM */
+.cart-item {
+    display: grid;
+    grid-template-columns: auto 120px 1fr auto auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-img {
+    width: 120px;
+    border-radius: 8px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-title {
+    font-size: 17px;
+    margin: 0;
+}
+
+.item-brand {
+    font-size: 13px;
+    color: #555;
+}
+
+.item-opts {
+    font-size: 13px;
+}
+
+.item-delivery {
+    color: #2b8a3e;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* PRECIO */
+.item-price {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* CANTIDAD */
+.item-qty {
+    text-align: center;
+}
+
+.qty-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qty {
+    display: block;
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.max {
+    display: block;
+    font-size: 11px;
+    color: #777;
+}
+
+.item-menu {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* OFERTA */
+.item-offer {
+    margin-top: 12px;
+    background: #e6f8e5;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offer-btn {
+    border: 1px solid #222;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* COLUMNA DERECHA */
+.cart-summary {
+    width: 30%;
+}
+
+.cart-summary h3 {
+    margin-bottom: 12px;
+}
+
+.summary-box {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px #0001;
+    border: 1px solid #ddd;
+}
+
+.summary-box p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.buy-btn {
+    background: #2d3640;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/***** SUGERIDOS *****/
+.sec-sub {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.suggest-section {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.suggest-item {
+    min-width: 160px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px #0001;
+    border: 1px solid #eee;
+}
+
+.suggest-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sg-title {
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.sg-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.sg-btn {
+    background: #2d3640;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+

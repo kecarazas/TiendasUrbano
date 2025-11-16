@@ -1,0 +1,236 @@
+/* CONTENEDOR PRINCIPAL */
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 80px;
+}
+
+/* GALERÍA */
+.gallery {
+  display: flex;
+  gap: 20px;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbs img {
+  width: 70px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* PANEL DERECHO */
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.sub-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* Tallas */
+.section {
+  margin-top: 15px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.size-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.size {
+  padding: 8px 16px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.size:hover {
+  border-color: #333;
+}
+
+/* Botón agregar */
+.btn-add {
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #000;
+}
+
+/* Miniatura seleccionada */
+.thumb.active {
+  border: 2px solid #000;
+}
+
+/* Colores */
+.color-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.color-circle.active {
+  border: 2px solid #000;
+}
+
+/* Talla activa */
+.size.active {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+/* Descripción */
+.description {
+  margin-top: 40px;
+  padding: 20px 80px;
+}
+
+.description h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+/* Más productos */
+.more-products {
+  margin-top: 40px;
+  padding: 20px 80px;
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.card-prod img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 6px;
+}
+
+/* Thumbs */
+.thumb.active {
+  border: 2px solid #000;
+}
+
+/* Selector de color con imágenes */
+.color-img-box {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.color-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  object-fit: cover;
+}
+
+.color-img.active {
+  border-color: #000;
+}
+
+/* Cantidad */
+.qty-section {
+  margin-top: 12px;
+}
+
+.qty-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 18px;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Estrellas */
+.stars {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Especificaciones */
+.specs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.specs td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.specs td:first-child {
+  font-weight: bold;
+}

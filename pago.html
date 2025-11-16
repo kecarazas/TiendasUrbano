@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pagar — Tiendas Urbano</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script defer src="js/cart.js"></script>
+
+  <style>
+    /* ----------- ESTILOS EXTRAS SOLO PARA ESTA PÁGINA ----------- */
+
+    .pay-wrapper {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      gap: 30px;
+    }
+
+    .pay-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #0001;
+      border: 1px solid #e3e3e3;
+      flex: 1;
+    }
+
+    .pay-box h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .input-block {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    .input-block label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .input-block input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .card-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pay-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 15px;
+      font-size: 17px;
+      border: none;
+      border-radius: 10px;
+      background: #2d3640;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .pay-btn:hover {
+      background: #1c2229;
+    }
+
+    .resume-box {
+      width: 320px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e2e2e2;
+      box-shadow: 0 3px 10px #0001;
+      height: fit-content;
+    }
+
+    .resume-box h4 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .resume-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .resume-total {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    .cards-img {
+      width: 160px;
+      margin-bottom: 15px;
+      opacity: 0.8;
+    }
+
+    /* MENSAJE FINAL */
+    .success-box {
+      display: none;
+      margin: 25px auto;
+      max-width: 700px;
+      background: #e8ffe8;
+      border-left: 5px solid #2ecc71;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .pay-wrapper {
+        flex-direction: column;
+      }
+      .resume-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="nav-fala">
+  <div class="nav-left">
+    <img src="assets/logo/logo.svg" class="logo-fala">
+    <button class="menu-btn">☰ Menú</button>
+  </div>
+
+  <div class="nav-center">
+    <div class="search-box">
+      <input type="text" placeholder="Buscar en Tiendas Urbano...">
+      <button class="search-btn">🔍</button>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+    <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+    <a class="icon-btn">🤍</a>
+    <a href="carrito.html" class="cart-btn">🛒 <span class="cart-badge">1</span></a>
+  </div>
+</header>
+
+<div id="successMsg" class="success-box">
+  ✔ Pago simulado exitoso.  
+  Gracias por tu compra en <strong>Tiendas Urbano</strong>.
+</div>
+
+<main class="pay-wrapper">
+
+  <!-- CAJA DE PAGO -->
+  <section class="pay-box">
+    <h3>Método de pago</h3>
+
+    <div class="input-block">
+      <label>Número de tarjeta</label>
+      <input type="text" placeholder="0000 0000 0000 0000">
+    </div>
+
+    <div class="input-block">
+      <label>Nombre en la tarjeta</label>
+      <input type="text" placeholder="Como aparece en la tarjeta">
+    </div>
+
+    <div class="card-row">
+      <div class="input-block" style="flex:1">
+        <label>MM/AA</label>
+        <input type="text" placeholder="MM/AA">
+      </div>
+      <div class="input-block" style="flex:1">
+        <label>CVC</label>
+        <input type="password" placeholder="***">
+      </div>
+    </div>
+
+    <button class="btn" onclick="checkoutSimulate()">Pagar ahora</button>
+  </section>
+
+  <!-- RESUMEN -->
+<aside class="resume-box">
+    <h4>Resumen</h4>
+
+    <div id="pay-resume-lines"></div>
+
+    <div class="resume-total" id="pay-total"></div>
+</aside>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Tiendas Urbano</p>
+    <div class="social">
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">🎵</a>
+    </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const linesBox = document.getElementById("pay-resume-lines");
+    const totalBox = document.getElementById("pay-total");
+
+    const cant = cartCount();
+    const total = cartTotal();
+
+    if (cant === 0) {
+      linesBox.innerHTML = "<p>No hay productos en el carrito.</p>";
+      totalBox.textContent = "";
+      return;
+    }
+
+    linesBox.innerHTML = `
+      <div class="resume-line">
+        <span>${cant} producto${cant > 1 ? "s" : ""}</span>
+        <span>$${total.toLocaleString()}</span>
+      </div>
+    `;
+
+    totalBox.textContent = `Total: $${total.toLocaleString()}`;
+  });
+</script>
+</body>
+</html>

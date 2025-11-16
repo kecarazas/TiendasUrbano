@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo — Tiendas Urbano</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script defer src="js/anim.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+</head>
+<body>
+<header class="nav-fala">
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
+
+        <button class="menu-btn">☰ Menú</button>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+
+        <a href="carrito.html" class="cart-btn">
+            🛒 <span class="cart-badge">1</span>
+        </a>
+    </div>
+</header>
+
+  <main class="catalog-container">
+
+    <!--  🟩 SIDEBAR DE FILTROS -->
+    <aside class="filters">
+
+        <h3>Filtros</h3>
+
+        <div class="filter-box">
+          <h4>Descuento</h4>
+          <label><input type="checkbox" class="f-discount" value="10"> 10% y más</label><br>
+          <label><input type="checkbox" class="f-discount" value="30"> 30% y más</label><br>
+          <label><input type="checkbox" class="f-discount" value="50"> 50% y más</label>
+        </div>
+
+        <div class="filter-box">
+          <h4>Tipo de entrega</h4>
+          <label><input type="checkbox" class="f-delivery" value="domicilio"> Envío a domicilio</label><br>
+          <label><input type="checkbox" class="f-delivery" value="retiro"> Retiro en tienda</label>
+        </div>
+
+        <div class="filter-box">
+          <h4>Categoría</h4>
+          <label><input type="checkbox" class="f-cat" value="camisa"> Camisas</label><br>
+          <label><input type="checkbox" class="f-cat" value="pantalon"> Pantalones</label><br>
+          <label><input type="checkbox" class="f-cat" value="botas"> Botas</label>
+        </div>
+
+    </aside>
+
+    <!-- 🟨 CATÁLOGO -->
+    <section class="catalog-content">
+
+        <!-- ORDENAMIENTO -->
+        <div class="catalog-top">
+          <span>Ordenar por:</span>
+          <select id="orderSelect">
+            <option value="rec">Recomendados</option>
+            <option value="asc">Precio menor</option>
+            <option value="desc">Precio mayor</option>
+          </select>
+        </div>
+
+        <!-- GRID PRODUCTOS -->
+        <div class="grid-products" id="productGrid">
+
+          <!-- 🔻 EJEMPLO PRODUCTO -->
+          <div class="card-prod" data-price="24990" data-cat="camisa" data-discount="0">
+            <img src="image/camisa.jpg">
+            <h4>Camisa Retro</h4>
+            <span class="price">$24.990</span>
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+
+          <div class="card-prod" data-price="34990" data-cat="pantalon" data-discount="0">
+            <img src="image/pantalon.jpg">
+            <h4>Pantalón Cargo</h4>
+            <span class="price">$34.990</span>
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+
+          <div class="card-prod" data-price="69990" data-cat="botas" data-discount="40">
+            <img src="image/botas.webp">
+            <h4>Botas Urbanas</h4>
+            
+            <span class="price">
+              $41.990 <span class="tag-discount">-40%</span>
+            </span>
+            <span class="price-old">$69.990</span>
+
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+
+          <div class="card-prod" data-price="24990" data-cat="camisa" data-discount="0">
+            <img src="image/camisa.jpg">
+            <h4>Camisa Retro</h4>
+            <span class="price">$24.990</span>
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+
+          <div class="card-prod" data-price="34990" data-cat="pantalon" data-discount="0">
+            <img src="image/pantalon.jpg">
+            <h4>Pantalón Cargo</h4>
+            <span class="price">$34.990</span>
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+
+          <div class="card-prod" data-price="69990" data-cat="botas" data-discount="40">
+            <img src="image/botas.webp">
+            <h4>Botas Urbanas</h4>
+
+            <span class="price">
+              $41.990 <span class="tag-discount">-40%</span>
+            </span>
+            <span class="price-old">$69.990</span>
+
+            <button class="btn-add"
+                data-price="47990"
+                data-title="Zapatillas Urbanas"
+                onclick="quickAddFromCard(this)">Agregar</button>
+          </div>
+        </div>
+    </section>
+  </main>
+
+
+<footer class="footer">
+    <p>© 2025 Tiendas Urbano</p>
+    <div class="social">
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">🎵</a>
+    </div>
+</footer>
+</body>
+</html>

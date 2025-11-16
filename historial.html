@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial de compras — Tiendas Urbano</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+  <script defer src="js/anim.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/mod.js"></script>
+
+<style>
+  .hist-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #0001;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  th {
+    background: #f7f7f7;
+  }
+
+  .no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    opacity: .7;
+  }
+</style>
+
+</head>
+<body>
+
+<header class="nav-fala">
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
+
+        <button class="menu-btn">☰ Menú</button>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+
+        <a href="carrito.html" class="cart-btn">
+            🛒 <span class="cart-badge">1</span>
+        </a>
+    </div>
+</header>
+
+<main class="hist-box">
+  <h2>Historial de compras</h2>
+
+  <table id="tablaHistorial"></table>
+  <button onclick="borrarHistorial()" 
+        style="margin-top:20px;padding:10px 16px;border:none;background:#d63031;color:white;border-radius:8px;cursor:pointer;">
+  🗑️ Borrar historial
+</button>
+</main>
+
+<script>
+const tabla = document.getElementById("tablaHistorial");
+const historial = JSON.parse(localStorage.getItem("historialCompras")) || [];
+
+if (historial.length === 0) {
+    tabla.innerHTML = `<tr><td class="no-data">No tienes compras registradas.</td></tr>`;
+} else {
+
+    // Agrupar productos
+    const agrupado = {};
+
+    historial.forEach(item => {
+        if (!agrupado[item.producto]) {
+            agrupado[item.producto] = {
+                producto: item.producto,
+                precio: item.precio,
+                cantidadTotal: 0,
+                vecesComprado: 0,
+                totalGastado: 0
+            };
+        }
+
+        agrupado[item.producto].cantidadTotal += item.cantidad;
+        agrupado[item.producto].vecesComprado++;
+        agrupado[item.producto].totalGastado += item.precio * item.cantidad;
+    });
+
+    // Render tabla
+    tabla.innerHTML = `
+        <tr>
+            <th>Producto</th>
+            <th>Veces comprado</th>
+            <th>Cantidad total</th>
+            <th>Total gastado</th>
+        </tr>
+    `;
+
+    Object.values(agrupado).forEach(p => {
+        tabla.innerHTML += `
+            <tr>
+                <td>${p.producto}</td>
+                <td>${p.vecesComprado}</td>
+                <td>${p.cantidadTotal}</td>
+                <td>$${p.totalGastado.toLocaleString()}</td>
+            </tr>
+        `;
+    });
+}
+</script>
+
+</body>
+</html>

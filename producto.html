@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Camisa Retro — Tiendas Urbano</title>
+  <link rel="stylesheet" href="css/fala.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script defer src="js/anim.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/mas.js"></script>
+</head>
+
+<body>
+
+<header class="nav-fala">
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
+
+        <button class="menu-btn">☰ Menú</button>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+
+        <a href="carrito.html" class="cart-btn">
+            🛒 <span class="cart-badge">1</span>
+        </a>
+    </div>
+</header>
+
+<main class="product-container">
+
+  <!-- Galería estilo Falabella -->
+  <div class="gallery">
+    
+    <!-- Miniaturas -->
+    <div class="thumbs">
+      <img class="thumb active" src="image/blanco1.webp">
+      <img class="thumb" src="image/blanco2.webp">
+      <img class="thumb" src="image/blanco3.webp">
+    </div>
+
+    <!-- Imagen principal -->
+    <div class="main-image">
+      <img id="mainImg" src="image/blanco1.webp" alt="Camisa Retro">
+    </div>
+  </div>
+
+  <!-- Panel derecho -->
+  <aside class="info-panel">
+
+    <h1 class="title">BASEMENT
+|
+Polera Mujer Basement</h1>
+    <div class="sub-title">Corte oversize • Tela premium</div>
+
+    <div class="price">$24.990</div>
+
+    <!-- Selector de color -->
+    <div class="section">
+      <label class="label">Color:</label>
+      <div class="color-box">
+        <div class="color-circle active" data-img="image/blanco1.webp" style="background:#ffffff"></div>
+        <div class="color-circle" data-img="image/negro.webp" style="background:#000000"></div>
+        <div class="color-circle" data-img="image/azul.webp" style="background:#4a6ee0"></div>
+      </div>
+    </div>
+
+    <!-- Selector de talla -->
+    <div class="section">
+      <label class="label">Talla:</label>
+      <div class="size-box">
+        <button class="size">S</button>
+        <button class="size">M</button>
+        <button class="size">L</button>
+        <button class="size">XL</button>
+      </div>
+    </div>
+    <!-- Cantidad -->
+    <div class="section qty-section">
+      <label class="label">Cantidad:</label>
+      <div class="qty-box">
+        <button id="qtyMinus">-</button>
+        <span id="qtyValue">1</span>
+        <button id="qtyPlus">+</button>
+      </div>
+    </div>
+    <!-- Botón -->
+    <button class="btn-add" onclick="addToCart('p030', 'Polera Mujer Basement', 29990, 'image/blanco1.webp')">
+        Agregar
+    </button>
+
+  </aside>
+
+</main>
+
+<!-- DESCRIPCIÓN -->
+<section class="description container">
+  <h3>Descripción del producto</h3>
+  <p>
+Polera Manga Corta Mujer Basement
+Descubre la comodidad y el estilo que te ofrece esta polera manga corta Basement, ideal para complementar tu look casual. Su diseño versátil te permite combinarla fácilmente con tus jeans, faldas o shorts favoritos, adaptándose a cualquier ocasión. Perfecta para el día a día, esta polera se convertirá en un básico imprescindible en tu armario, brindándote frescura y libertad de movimiento.
+
+Diseño casual y moderno, perfecto para cualquier ocasión.
+Confeccionada con materiales de alta calidad para mayor durabilidad y confort.
+Ideal para combinar con jeans, faldas o shorts, creando looks versátiles.
+Disponible en una variedad de colores para que encuentres tu estilo perfecto.
+Polera manga corta, un básico esencial en tu guardarropa de mujer.
+  </p>
+</section>
+<!-- ESPECIFICACIONES -->
+<section class="specs container">
+  <h3>Especificaciones</h3>
+
+  <table>
+    <tr><td>Material</td><td>Algodón 100%</td></tr>
+    <tr><td>Fit</td><td>Oversize</td></tr>
+    <tr><td>Temporada</td><td>Todo el año</td></tr>
+    <tr><td>Hecho en</td><td>China</td></tr>
+  </table>
+</section>
+
+<!-- MÁS PRODUCTOS -->
+<section class="more-products container">
+  <h3>Más productos</h3>
+
+  <div class="grid-products">
+    <div class="card-prod">
+      <img src="image/zapatillas.jpg">
+      <div class="card-body"><h4>Zapatillas Urbanas</h4><div class="price">$59.990</div></div>
+    </div>
+
+    <div class="card-prod">
+      <img src="image/polera classic.webp">
+      <div class="card-body"><h4>Polera Classic</h4><div class="price">$14.990</div></div>
+    </div>
+
+    <div class="card-prod">
+      <img src="image/pantalon.jpg">
+      <div class="card-body"><h4>Pantalón Cargo</h4><div class="price">$29.990</div></div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
