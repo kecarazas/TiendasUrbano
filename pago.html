@@ -135,24 +135,46 @@
 <body>
 
 <header class="nav-fala">
-  <div class="nav-left">
-    <img src="assets/logo/logo.svg" class="logo-fala">
-    <button class="menu-btn">☰ Menú</button>
-  </div>
+    <div class="nav-left">
+        <img src="assets/logo/logo.svg" class="logo-fala">
 
-  <div class="nav-center">
-    <div class="search-box">
-      <input type="text" placeholder="Buscar en Tiendas Urbano...">
-      <button class="search-btn">🔍</button>
+        <div class="menu-container">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div id="dropdownMenu" class="dropdown hidden">
+        <h4>🛍️ Tienda</h4>
+        <a href="catalogo.html">Catálogo completo</a>
+
+        <h4>👕 Categorías</h4>
+        <a href="hombres.html">Hombres</a>
+        <a href="mujeres.html">Mujeres</a>
+        <a href="ninos.html">Niños</a>
+
+        <h4>👜 Accesorios</h4>
+        <a href="zapatillas.html">Zapatillas</a>
+        <a href="bolsos.html">Bolsos</a>
+        <a href="accesorios.html">Accesorios</a>
     </div>
-  </div>
+</div>
+    </div>
 
-  <div class="nav-right">
-    <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
-    <a href="cuenta.html" class="nav-link">Mi cuenta</a>
-    <a class="icon-btn">🤍</a>
-    <a href="carrito.html" class="cart-btn">🛒 <span class="cart-badge">1</span></a>
-  </div>
+    <div class="nav-center">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar en Tiendas Urbano...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
+        <button onclick="logout()" class="btn">Cerrar sesión</button>
+        <a href="historial.html" class="nav-link">Mi cuenta</a>
+        <a class="icon-btn">🤍</a>
+
+        <a href="carrito.html" class="cart-btn">
+            🛒 <span class="cart-badge">1</span>
+        </a>
+    </div>
 </header>
 
 <div id="successMsg" class="success-box">
