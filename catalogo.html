@@ -16,7 +16,24 @@
     <div class="nav-left">
         <img src="assets/logo/logo.svg" class="logo-fala">
 
-        <button class="menu-btn">☰ Menú</button>
+        <div class="menu-container">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div id="dropdownMenu" class="dropdown hidden">
+        <h4>🛍️ Tienda</h4>
+        <a href="catalogo.html">Catálogo completo</a>
+
+        <h4>👕 Categorías</h4>
+        <a href="hombres.html">Hombres</a>
+        <a href="mujeres.html">Mujeres</a>
+        <a href="ninos.html">Niños</a>
+
+        <h4>👜 Accesorios</h4>
+        <a href="zapatillas.html">Zapatillas</a>
+        <a href="bolsos.html">Bolsos</a>
+        <a href="accesorios.html">Accesorios</a>
+    </div>
+</div>
     </div>
 
     <div class="nav-center">
@@ -28,7 +45,8 @@
 
     <div class="nav-right">
         <a href="login.html" class="nav-link" id="userArea">Hola, inicia sesión</a>
-        <a href="cuenta.html" class="nav-link">Mi cuenta</a>
+        <button onclick="logout()" class="btn">Cerrar sesión</button>
+        <a href="historial.html" class="nav-link">Mi cuenta</a>
         <a class="icon-btn">🤍</a>
 
         <a href="carrito.html" class="cart-btn">
@@ -119,19 +137,19 @@
           </div>
 
           <div class="card-prod" data-price="24990" data-cat="camisa" data-discount="0">
-            <img src="image/camisa.jpg">
-            <h4>Camisa Retro</h4>
+            <img src="image/polera classic.webp">
+            <h4>polera classic</h4>
             <span class="price">$24.990</span>
             <button class="btn-add"
-                data-price="47990"
-                data-title="Zapatillas Urbanas"
+                data-price="12990"
+                data-title="polera classic"
                 onclick="quickAddFromCard(this)">Agregar</button>
           </div>
 
-          <div class="card-prod" data-price="34990" data-cat="pantalon" data-discount="0">
-            <img src="image/pantalon.jpg">
-            <h4>Pantalón Cargo</h4>
-            <span class="price">$34.990</span>
+          <div class="card-prod" data-price="34990" data-cat="camisa" data-discount="0">
+            <img src="image/blanco1.webp">
+            <h4>Polera Mujer Basement</h4>
+            <span class="price">$29.990</span>
             <button class="btn-add"
                 data-price="47990"
                 data-title="Zapatillas Urbanas"
@@ -139,13 +157,13 @@
           </div>
 
           <div class="card-prod" data-price="69990" data-cat="botas" data-discount="40">
-            <img src="image/botas.webp">
-            <h4>Botas Urbanas</h4>
+            <img src="image/zapas.webp">
+            <h4>zapatillas Urbanas</h4>
 
             <span class="price">
               $41.990 <span class="tag-discount">-40%</span>
             </span>
-            <span class="price-old">$69.990</span>
+            <span class="price-old">$49.990</span>
 
             <button class="btn-add"
                 data-price="47990"

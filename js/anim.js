@@ -50,6 +50,7 @@ document.querySelector(".logo-fala").onclick = () => {
     window.location.href = "index.html";
 };
 
-document.querySelector(".menu-btn").onclick = () => {
-    alert("Aquí abrirías tu menú lateral :)");
-};
+function toggleMenu() {
+    document.getElementById("dropdownMenu").classList.toggle("hidden");
+}
+

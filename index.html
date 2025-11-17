@@ -18,7 +18,24 @@
     <div class="nav-left">
         <img src="assets/logo/logo.svg" class="logo-fala">
 
-        <button class="menu-btn">☰ Menú</button>
+        <div class="menu-container">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div id="dropdownMenu" class="dropdown hidden">
+        <h4>🛍️ Tienda</h4>
+        <a href="catalogo.html">Catálogo completo</a>
+
+        <h4>👕 Categorías</h4>
+        <a href="hombres.html">Hombres</a>
+        <a href="mujeres.html">Mujeres</a>
+        <a href="ninos.html">Niños</a>
+
+        <h4>👜 Accesorios</h4>
+        <a href="zapatillas.html">Zapatillas</a>
+        <a href="bolsos.html">Bolsos</a>
+        <a href="accesorios.html">Accesorios</a>
+    </div>
+</div>
     </div>
 
     <div class="nav-center">
@@ -187,12 +204,6 @@
         <a href="#">🎵</a>
     </div>
 </footer>
-<script>
-function cerrarSesion() {
-    localStorage.removeItem("usuarioActivo");
-    location.href = "index.html";
-}
-</script>
 
 </body>
 </html>

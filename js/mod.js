@@ -26,3 +26,4 @@ qtyMinus.addEventListener("click", () => {
   if (qty > 1) qty--;
   qtyValue.textContent = qty;
 });
+
